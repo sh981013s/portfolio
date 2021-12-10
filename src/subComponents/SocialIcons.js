@@ -2,8 +2,9 @@ import {NavLink} from "react-router-dom";
 import {Github, Instagram} from "../components/AllSvgs";
 import styled from 'styled-components';
 import {DarkTheme} from "../components/Themes";
+import {motion} from "framer-motion";
 
-const Icons = styled.div`
+const Icons = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
