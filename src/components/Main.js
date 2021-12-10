@@ -5,6 +5,8 @@ import SocialIcons from "../subComponents/SocialIcons";
 import {NavLink} from "react-router-dom";
 import {YinYang} from "./AllSvgs";
 import {useState} from "react";
+import Intro from "./Intro";
+import {motion} from "framer-motion";
 
 const MainContainer = styled.div`
   background: ${props => props.theme.body};
@@ -43,7 +45,7 @@ const Blog = styled(NavLink)`
 `
 
 const Work = styled(NavLink)`
-  color: ${props => props.theme.text};
+  color: ${props => props.click ? props.theme.body : props.theme.text};
   position: absolute;
   top: 50%;
   left: 1.3rem;
@@ -64,7 +66,7 @@ const BottomBar = styled.div`
 `
 
 const About = styled(NavLink)`
-  color: ${props => props.theme.text};
+  color: ${props => props.click ? props.theme.body : props.theme.text};
   text-decoration: none;
   z-index: 1;
 `
@@ -119,6 +121,7 @@ const DarkDiv = styled.div`
   width: ${props => props.click ? '50%' : '0%'};
   height: ${props => props.click ? '100%' : '0%'};
   z-index: 1;
+  transition: height .5s ease, width 1s ease .5s;
 `
 
 const Main = () => {
@@ -132,8 +135,8 @@ const Main = () => {
             <DarkDiv click={click}/>
             <Container>
                 <PowerButton />
-                <LogoComponent />
-                <SocialIcons />
+                <LogoComponent theme={click ? 'dark' : 'light'}/>
+                <SocialIcons theme={click ? 'dark' : 'light'}/>
 
                 <Center click={click}>
                     <YinYang onClick={handleClick} width={click ? 150 : 200} height={click ? 150 : 200} fill='currentColor' />
@@ -141,33 +144,49 @@ const Main = () => {
                 </Center>
 
                 <Contact target="_blank" to={{pathname:'mailto:sh981013s@gmail.com'}}>
-                    <h2>
+                    <motion.h2
+                        whileHover={{scale: 1.1}}
+                        whileTap={{scale:.9}}
+                    >
                         Email me 📬
-                    </h2>
+                    </motion.h2>
                 </Contact>
                 <Blog target="_blank" to={{pathname:'https://hwani.dev/'}}>
-                    <h2>
+                    <motion.h2
+                        whileHover={{scale: 1.1}}
+                        whileTap={{scale:.9}}
+                    >
                         Blog
-                    </h2>
+                    </motion.h2>
                 </Blog>
-                <Work to='/work'>
-                    <h2>
+                <Work click={click} to='/work'>
+                    <motion.h2
+                        whileHover={{scale: 1.1}}
+                        whileTap={{scale:.9}}
+                    >
                         Work
-                    </h2>
+                    </motion.h2>
                 </Work>
                 <BottomBar>
-                    <About to='/about'>
-                        <h2>
+                    <About click={click} to='/about'>
+                        <motion.h2
+                            whileHover={{scale: 1.1}}
+                            whileTap={{scale:.9}}
+                        >
                             About me.
-                        </h2>
+                        </motion.h2>
                     </About>
                     <Skills to='/skills'>
-                        <h2>
+                        <motion.h2
+                            whileHover={{scale: 1.1}}
+                            whileTap={{scale:.9}}
+                        >
                             My Skills.
-                        </h2>
+                        </motion.h2>
                     </Skills>
                 </BottomBar>
             </Container>
+            {click ? <Intro click={click} /> : null}
         </MainContainer>
     )
 }
