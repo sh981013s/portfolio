@@ -44,7 +44,7 @@ const Title = styled.h2`
 
 const Description = styled.div`
   color: ${props => props.theme.text};
-  font-size: calc(.6em + 1vw);
+  font-size: calc(.5em + 1vw);
   padding: .5rem 0;
   ul>*:not(:first-child) {
     margin-left: 2em;
