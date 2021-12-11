@@ -1,4 +1,4 @@
-import {keyframes, ThemeProvider} from "styled-components";
+import {ThemeProvider} from "styled-components";
 import {DarkTheme} from "./Themes";
 import styled from 'styled-components';
 import PowerButton from "../subComponents/PowerButton";

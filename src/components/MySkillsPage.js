@@ -1,7 +1,7 @@
 import {ThemeProvider} from "styled-components";
 import {lightTheme} from "./Themes";
 import styled from 'styled-components';
-import {Design, Develope} from './AllSvgs';
+import {Develope} from './AllSvgs';
 import PowerButton from "../subComponents/PowerButton";
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
