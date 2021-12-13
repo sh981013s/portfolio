@@ -21,10 +21,10 @@ export const Work = [
     {
         id:3,
         name:"카카오톡 full stack 클론",
-        description:"카카오톡의 UI 클론, Express 를 활용한 친구 기능, \'Socket\' 통신을 활용한 유저간 실시간 채팅, \'Zustand\' 를 활용한 상태관리",
-        tags:["react","express","zustand"],
+        description:"카카오톡의 UI 클론, Express 를 활용한 친구 기능, \"Socket\" 통신을 활용한 유저간 실시간 채팅, \"Zustand\" 를 활용한 상태관리",
+        tags:["react","express","zustand", "scss"],
 
-        demo:"http://devto-clone-codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/devto-clone"
+        demo:"https://github.com/sh981013s/kakaoTalk",
+        github:"https://github.com/sh981013s/kakaoTalk"
     }
 ]
