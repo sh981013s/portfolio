@@ -16,7 +16,6 @@ const Box = styled.div`
   height: 400vh;
   position: relative;
   overflow: hidden;
-  
 `
 
 const Main = styled(motion.ul)`
@@ -59,7 +58,7 @@ const WorkPage = () => {
 
         const rotate = () => {
             element.style.transform = `translateX(${-window.pageYOffset}px)`
-            yinyang.current.style.transform = `rotate(` + -window.pageYOffset + 'deg)'
+            yinyang.current.style.transform = `rotate(' + -window.pageYOffset + 'deg)`
         }
 
         window.addEventListener('scroll', rotate)
