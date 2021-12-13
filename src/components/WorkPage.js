@@ -35,6 +35,7 @@ const Rotate = styled.span`
   width: 80px;
   height: 80px;
   z-index: 1;
+  transform: none;
 `
 
 const container = {
@@ -58,7 +59,8 @@ const WorkPage = () => {
 
         const rotate = () => {
             element.style.transform = `translateX(${-window.pageYOffset}px)`
-            yinyang.current.style.transform = `rotate(' + -window.pageYOffset + 'deg)`
+            return (yinyang.current.style.transform =
+                'rotate(' + -window.pageYOffset + 'deg)')
         }
 
         window.addEventListener('scroll', rotate)
