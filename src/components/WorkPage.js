@@ -1,31 +1,60 @@
-import {ThemeProvider} from "styled-components";
-import {DarkTheme} from "./Themes";
-import styled from 'styled-components';
-import PowerButton from "../subComponents/PowerButton";
-import LogoComponent from "../subComponents/LogoComponent";
-import SocialIcons from "../subComponents/SocialIcons";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+import { useEffect, useRef, lazy, Suspense } from "react";
 
+import styled, { ThemeProvider } from "styled-components";
+
+import { YinYang } from "./AllSvgs";
 import { Work } from '../data/WorkData';
-import Card from "../subComponents/Card";
-import {useEffect, useRef} from "react";
-import {YinYang} from "./AllSvgs";
+import { DarkTheme, mediaQueries } from "./Themes";
 
-const Box = styled.div`
-  background: ${props => props.theme.body};
-  height: 400vh;
+import Card from "../subComponents/Card";
+import Loading from "../subComponents/Loading";
+
+const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
+const PowerButton = lazy(() => import("../subComponents/PowerButton"));
+const LogoComponent = lazy(() => import("../subComponents/LogoComponent"));
+
+const Box = styled(motion.div)`
+  background-color: ${(props) => props.theme.body};
   position: relative;
-  overflow: hidden;
-`
+  display: flex;
+  height: 400vh;
+`;
 
 const Main = styled(motion.ul)`
   position: fixed;
   top: 12rem;
   left: calc(10rem + 15vw);
+
   height: 40vh;
+
   display: flex;
-  color: white;
-`
+
+  ${mediaQueries(50)`
+        
+        
+        left:calc(8rem + 15vw);
+
+  `};
+
+  ${mediaQueries(40)`
+  top: 30%;
+        
+        left:calc(6rem + 15vw);
+
+  `};
+
+  ${mediaQueries(40)`
+        
+        left:calc(2rem + 15vw);
+
+  `};
+  ${mediaQueries(25)`
+        
+        left:calc(1rem + 15vw);
+
+  `};
+`;
 
 const Rotate = styled.span`
   display: block;
@@ -34,64 +63,87 @@ const Rotate = styled.span`
   bottom: 1rem;
   width: 80px;
   height: 80px;
-  z-index: 1;
-  transform: none;
-`
 
+  z-index: 1;
+  ${mediaQueries(40)`
+     width:60px;
+         height:60px;   
+       svg{
+         width:60px;
+         height:60px;
+       }
+
+  `};
+  ${mediaQueries(25)`
+        width:50px;
+         height:50px;
+        svg{
+         width:50px;
+         height:50px;
+       }
+
+  `};
+`;
 const container = {
-    hidden: {opacity:0},
+    hidden: { opacity: 0 },
     show: {
-        opacity:1,
-        transition:{
-            staggerChildren:.5,
-            duration:.5
-        }
-    }
-}
+        opacity: 1,
+
+        transition: {
+            staggerChildren: 0.5,
+            duration: 0.5,
+        },
+    },
+};
 
 const WorkPage = () => {
-
     const ref = useRef(null);
+
     const yinyang = useRef(null);
 
     useEffect(() => {
         let element = ref.current;
 
         const rotate = () => {
-            element.style.transform = `translateX(${-window.pageYOffset}px)`
+            element.style.transform = `translateX(${-window.pageYOffset}px)`;
+
             return (yinyang.current.style.transform =
-                'rotate(' + -window.pageYOffset + 'deg)')
-        }
+                "rotate(" + -window.pageYOffset + "deg)");
+        };
 
-        window.addEventListener('scroll', rotate)
+        window.addEventListener("scroll", rotate);
         return () => {
-            window.removeEventListener('scroll', rotate);
-
-        }
-    }, [])
+            window.removeEventListener("scroll", rotate);
+        };
+    }, []);
 
     return (
         <ThemeProvider theme={DarkTheme}>
-            <Box>
-                <LogoComponent theme='dark' />
-                <SocialIcons theme='dark' />
-                <PowerButton />
+            <Suspense fallback={<Loading />}>
+                <Box
+                    key="work"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { duration: 1 } }}
+                    exit={{ opacity: 0, transition: { duration: 0.5 } }}
+                >
+                    <LogoComponent theme="dark" />
+                    <PowerButton />
+                    <SocialIcons theme="dark" />
 
-                <Main ref={ref} variants={container} initial='hidden' animate='show'>
-                    {
-                        Work.map(data =>
-                            <Card key={data.id} data={data} />
-                        )
-                    }
-                </Main>
-                <Rotate ref={yinyang}>
-                    <YinYang width={80} height={80} fill={DarkTheme.text} />
-                </Rotate>
+                    <Main ref={ref} variants={container} initial="hidden" animate="show">
+                        {Work.map((d) => (
+                            <Card key={d.id} data={d} />
+                        ))}
+                    </Main>
 
-                {/*<BigTitle text='PROJECTS' top='10%' right='20%'/>*/}
-            </Box>
+
+                    <Rotate ref={yinyang}>
+                        <YinYang width={80} height={80} fill={DarkTheme.text} />
+                    </Rotate>
+                </Box>
+            </Suspense>
         </ThemeProvider>
-    )
-}
+    );
+};
 
 export default WorkPage;

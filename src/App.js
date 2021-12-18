@@ -2,34 +2,43 @@ import GlobalStyle from "./globalStyles";
 import {ThemeProvider} from "styled-components";
 import {lightTheme} from "./components/Themes";
 import {Route, Switch, useLocation} from "react-router-dom";
-
-import Main from './components/Main';
-import AboutPage from "./components/AboutPage";
-import BlogPage from "./components/BlogPage";
-import WorkPage from "./components/WorkPage";
-import MySkillsPage from "./components/MySkillsPage";
 import {AnimatePresence} from "framer-motion";
-import SoundBar from "./subComponents/SoundBar";
+import Loading from "./subComponents/Loading";
+import {lazy,Suspense} from "react";
+
+/* Components */
+const Main = lazy(() => import("./components/Main"));
+const AboutPage = lazy(() => import("./components/AboutPage"));
+const MySkillsPage = lazy(() => import("./components/MySkillsPage"));
+const BlogPage = lazy(() => import("./components/BlogPage"));
+const WorkPage = lazy(() => import("./components/WorkPage"));
+const SoundBar = lazy(() => import("./subComponents/SoundBar"));
 
 function App() {
+    const location = useLocation();
 
-  const location = useLocation();
+    return (
+        <>
+            <GlobalStyle />
+            <ThemeProvider theme={lightTheme}>
+                <Suspense fallback={<Loading />}>
 
-  return <>
-    <GlobalStyle />
-    <ThemeProvider theme={lightTheme}>
-      <SoundBar />
-      <AnimatePresence exitBeforeEnter>
-        <Switch location={location} key={location.pathname}>
-          <Route exact path="/" component={Main}/>
-          <Route exact path="/about" component={AboutPage}/>
-          <Route exact path="/blog" component={BlogPage}/>
-          <Route exact path="/work" component={WorkPage}/>
-          <Route exact path="/skills" component={MySkillsPage}/>
-        </Switch>
-      </AnimatePresence>
-    </ThemeProvider>
-  </>
+                    <SoundBar />
+                    <AnimatePresence exitBeforeEnter>
+                        <Switch location={location} key={location.pathname}>
+                            <Route exact path="/" component={Main}/>
+                            <Route exact path="/about" component={AboutPage}/>
+                            <Route exact path="/blog" component={BlogPage}/>
+                            <Route exact path="/work" component={WorkPage}/>
+                            <Route exact path="/skills" component={MySkillsPage}/>
+                        </Switch>
+                    </AnimatePresence>
+                </Suspense>
+
+            </ThemeProvider>
+        </>
+    )
+
 
 }
 
