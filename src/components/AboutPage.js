@@ -12,7 +12,6 @@ const LogoComponent = lazy(() => import('../subComponents/LogoComponent'))
 const ParticlesComponent = lazy(() =>
     import('../subComponents/ParticleComponent')
 )
-const BigTitle = lazy(() => import('../subComponents/BigTitle'))
 
 
 const Box = styled(motion.div)`
@@ -112,7 +111,6 @@ const AboutPage = () => {
                         animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}>
                         한번 만들었던 방식은 쉽고 편하지만 성장에는 한계가 있다고 믿고,<br /> 새로운 시도를 해보면서 컴포트 존에서 항상 벗어나려고 의식적으로 노력하는 '이승환' 입니다.
                     </Main>
-                    <BigTitle text='ABOUT' top='10%' left='5%' />
                 </Box>
             </Suspense>
         </ThemeProvider>
