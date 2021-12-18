@@ -100,7 +100,7 @@ const SubBox = styled.div`
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0%);
-    width: 100%;
+    width: 85%;
     height: auto;
   }
   ${mediaQueries(50)`
@@ -118,7 +118,7 @@ const SubBox = styled.div`
   
       .pic {
     
-    width: 80%;
+    width: 60%;
     
   }
 
