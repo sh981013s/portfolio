@@ -36,7 +36,6 @@ const play = keyframes`
   100% {
     transform: scaleY(1);
   }
-  
 `
 
 const Line = styled.span`
