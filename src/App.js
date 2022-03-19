@@ -1,4 +1,4 @@
-import GlobalStyle from "./globalStyles";
+import GlobalStyle from "./globgalStyles";
 import {ThemeProvider} from "styled-components";
 import {lightTheme} from "./components/Themes";
 import {Route, Switch, useLocation} from "react-router-dom";
@@ -22,7 +22,6 @@ function App() {
             <GlobalStyle />
             <ThemeProvider theme={lightTheme}>
                 <Suspense fallback={<Loading />}>
-
                     <SoundBar />
                     <AnimatePresence exitBeforeEnter>
                         <Switch location={location} key={location.pathname}>

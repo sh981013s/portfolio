@@ -13,6 +13,9 @@ import Loading from "../subComponents/Loading";
 const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
 const PowerButton = lazy(() => import("../subComponents/PowerButton"));
 const LogoComponent = lazy(() => import("../subComponents/LogoComponent"));
+const ParticlesComponent = lazy(() =>
+    import('../subComponents/ParticleComponent')
+)
 
 const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
@@ -129,6 +132,7 @@ const WorkPage = () => {
                     <LogoComponent theme="dark" />
                     <PowerButton />
                     <SocialIcons theme="dark" />
+                    <ParticlesComponent theme='dark' />
 
                     <Main ref={ref} variants={container} initial="hidden" animate="show">
                         {Work.map((d) => (
