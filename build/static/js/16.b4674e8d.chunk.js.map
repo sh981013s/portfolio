@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/BlogPage.js"],"names":["BlogPage"],"mappings":"kLAQeA,UARE,WACb,OACI","file":"static/js/16.b4674e8d.chunk.js","sourcesContent":["const BlogPage = () => {\n    return (\n        <div>\n            BlogPage Component/ Page\n        </div>\n    )\n}\n\nexport default BlogPage;\n"],"sourceRoot":""}
