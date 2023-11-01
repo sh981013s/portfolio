@@ -204,9 +204,9 @@ const Intro = () => {
         >
             <SubBox>
                 <Text>
-                    <h1>Hi,</h1>
-                    <h6>I'm SeungHwan.</h6>
-                    <h7>Currently focusing on React</h7>
+
+
+                  <h2>Aspiring Front-End Developer proficient in web technologies with an emphasis on crafting user-centric experiences.</h2>
                 </Text>
             </SubBox>
             <SubBox>
