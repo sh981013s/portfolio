@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import Me from '../assets/Images/profile-img3.png';
+import Me from '../assets/Images/profile-img5.png';
 import { mediaQueries } from "./Themes";
 
 const Box = styled(motion.div)`
@@ -97,18 +97,19 @@ const SubBox = styled.div`
   display: flex;
   .pic {
     position: absolute;
-    bottom: 0;
+    bottom: 5%;
     left: 50%;
     transform: translate(-50%, 0%);
-    width: 85%;
+    width: 60%;
     height: auto;
   }
+  
   ${mediaQueries(50)`
       width: 100%;
     height: 50%;
       .pic {
     
-    width: 70%;
+    width: 65%;
     
   }
 
@@ -118,7 +119,7 @@ const SubBox = styled.div`
   
       .pic {
     
-    width: 60%;
+    width: 54%;
     
   }
 
@@ -129,7 +130,7 @@ const SubBox = styled.div`
 
       .pic {
     
-    width: 90%;
+    width: 55%;
     
   }
 
@@ -139,7 +140,7 @@ const SubBox = styled.div`
 
      .pic {
    
-   width: 80%;
+   width: 25%;
    
  }
 
