@@ -204,8 +204,6 @@ const Intro = () => {
         >
             <SubBox>
                 <Text>
-
-
                   <h2>Aspiring Front-End Developer proficient in web technologies with an emphasis on crafting user-centric experiences.</h2>
                 </Text>
             </SubBox>

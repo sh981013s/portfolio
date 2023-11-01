@@ -33,11 +33,6 @@ const SocialIcons = (props) => {
                         <Github width={25} height={25} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body} />
                     </NavLink>
                 </div>
-                <div>
-                    <NavLink style={{color:'inherit'}}  target='_blank' to={{pathname:'https://www.instagram.com/hwani_981013/'}}>
-                        <Instagram width={25} height={25} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body} />
-                    </NavLink>
-                </div>
             </div>
             <Line color={props.theme}/>
         </Icons>
