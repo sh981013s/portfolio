@@ -1,5 +1,5 @@
 import {ThemeProvider} from "styled-components";
-import {lightTheme} from "./Themes";
+import {lightTheme, mediaQueries} from "./Themes";
 import styled from 'styled-components';
 import {Develope} from './AllSvgs';
 import Loading from "../subComponents/Loading";
@@ -16,7 +16,7 @@ const ParticleComponent = lazy(() =>
 const Box = styled.div`
   background: ${props => props.theme.body};
   width: 100vw;
-  height: 100vh;
+  //height: 100vh;
   position: relative;
   display: flex;
   justify-content: space-evenly;
@@ -29,7 +29,7 @@ const Main = styled.div`
   background: ${props => props.theme.body};
   padding: 2rem;
   width: 50vw;
-  height: 70vh;
+    margin-top: 6rem;
   z-index: 3;
   line-height: 1.5;
   font-family: 'Ubuntu Mono',monospace;
@@ -50,7 +50,7 @@ const Title = styled.h2`
 
 const Description = styled.div`
   color: ${props => props.theme.text};
-  font-size: calc(.5em + 1vw);
+  font-size: calc(.4em + 1vw);
   padding: .5rem 0;
   ul>*:not(:first-child) {
     margin-left: 2em;
@@ -73,25 +73,36 @@ const MySkillsPage = () => {
                         <Title>
                             <Develope width={40} height={40} /> Frotend Developer
                         </Title>
-                        <h1>Skills</h1>
+
                         <Description>
                             <ul>
                                 <h4>HTML / CSS</h4>
-                                <li>시멘틱 마크업을 준수합니다.</li>
-                                <li>Search Engine Optimization 경험이 있습니다.</li>
-                                <li>Sass 등 CSS Preprocessor 사용할 수 있습니다.</li>
+                                <li>Compliant with semantic markup standards.</li>
+                                <li>Experienced with Search Engine Optimization (SEO).</li>
+                                <li>Proficient in using CSS preprocessors like Sass.</li>
                             </ul>
                             <ul>
                                 <h4>JavaScript</h4>
-                                <li>ES2015 이후의 자바스크립트 문법에 익숙합니다.</li>
-                                <li>jQuery 없이 DOM API를 다루는데 능숙합니다.</li>
+                                <li>Familiar with JavaScript syntax post ES2015.</li>
+                                <li>Skilled in handling DOM API without jQuery.</li>
+                            </ul>
+                            <ul>
+                                <h4>TypeScript</h4>
+                                <li>Proficient in integrating and using TypeScript with various frameworks and libraries.</li>
                             </ul>
                             <ul>
                                 <h4>React</h4>
-                                <li>React hooks를 능숙하게 사용하고, 거의 모든 컴포넌트를 함수로 만듭니다. hook을 이용해 공통 비즈니스 로직을 적절히 모듈화해 사용할 수 있습니다.</li>
-                                {/*<li>각종 컴포넌트 디자인 패턴에 능숙하며, 합리적인 방식으로 컴포넌트를 분리합니다.</li>*/}
-                                <li>거의 모든 컴포넌트를 함수로 만드며, 합리적인 방식으로 컴포넌트를 분리합니다.</li>
-                                <li>Context Api & Redux & Redux tool kit을 사용하여 상태관리를 합니다.</li>
+                                <li>Expert in using React hooks and primarily develops components as functions. Capable of modularizing common business logic appropriately using hooks.</li>
+                                <li>Primarily constructs components as functions and sensibly decomposes components.</li>
+                                <li>Manages state using Context Api, Zustand, and Recoil.</li>
+                            </ul>
+                            <ul>
+                                <h4>Additional Tools & Libraries</h4>
+                                <li>Proficient in Recoil and Zustand for advanced state management.</li>
+                                <li>Experienced with React-Query for asynchronous data fetching and caching.</li>
+                                <li>Skilled in bundling and optimization using Webpack5.</li>
+                                <li>Expert in styled-components for CSS-in-JS styling solutions.</li>
+                                <li>Adept at making HTTP requests and handling responses using Axios.</li>
                             </ul>
                         </Description>
                     </Main>
