@@ -1,5 +1,5 @@
 import {ThemeProvider} from "styled-components";
-import {lightTheme, mediaQueries} from "./Themes";
+import {lightTheme} from "./Themes";
 import styled from 'styled-components';
 import {Develope} from './AllSvgs';
 import Loading from "../subComponents/Loading";
