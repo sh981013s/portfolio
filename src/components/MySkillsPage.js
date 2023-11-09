@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import {Develope} from './AllSvgs';
 import Loading from "../subComponents/Loading";
 import {lazy,Suspense} from "react";
+import {useTranslation} from "react-i18next";
 
 
 const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
@@ -61,6 +62,8 @@ const Description = styled.div`
 `
 
 const MySkillsPage = () => {
+    const { t } = useTranslation();
+
     return (
         <ThemeProvider theme={lightTheme}>
             <Suspense fallback={<Loading />}>
@@ -77,32 +80,31 @@ const MySkillsPage = () => {
                         <Description>
                             <ul>
                                 <h4>HTML / CSS</h4>
-                                <li>Compliant with semantic markup standards.</li>
-                                <li>Experienced with Search Engine Optimization (SEO).</li>
-                                <li>Proficient in using CSS preprocessors like Sass.</li>
+                                <li>{t('htmlCss.compliant')}</li>
+                                <li>{t('htmlCss.seoExperienced')}</li>
+                                <li>{t('htmlCss.styledComponentsProficient')}</li>
                             </ul>
                             <ul>
                                 <h4>JavaScript</h4>
-                                <li>Familiar with JavaScript syntax post ES2015.</li>
-                                <li>Skilled in handling DOM API without jQuery.</li>
+                                <li>{t('javaScript.syntaxKnowledge')}</li>
+                                <li>{t('javaScript.domApiSkill')}</li>
                             </ul>
                             <ul>
                                 <h4>TypeScript</h4>
-                                <li>Proficient in integrating and using TypeScript with various frameworks and libraries.</li>
+                                <li>{t('typeScript.integrationProficiency')}</li>
                             </ul>
                             <ul>
                                 <h4>React</h4>
-                                <li>Expert in using React hooks and primarily develops components as functions. Capable of modularizing common business logic appropriately using hooks.</li>
-                                <li>Primarily constructs components as functions and sensibly decomposes components.</li>
-                                <li>Manages state using Context Api, Zustand, and Recoil.</li>
+                                <li>{t('react.hooksExpertise')}</li>
+                                <li>{t('react.functionComponents')}</li>
+                                <li>{t('react.stateManagement')}</li>
                             </ul>
                             <ul>
                                 <h4>Additional Tools & Libraries</h4>
-                                <li>Proficient in Recoil and Zustand for advanced state management.</li>
-                                <li>Experienced with React-Query for asynchronous data fetching and caching.</li>
-                                <li>Skilled in bundling and optimization using Webpack5.</li>
-                                <li>Expert in styled-components for CSS-in-JS styling solutions.</li>
-                                <li>Adept at making HTTP requests and handling responses using Axios.</li>
+                                <li>{t('additionalTools.stateManagementTools')}</li>
+                                <li>{t('additionalTools.reactQueryExperience')}</li>
+                                <li>{t('additionalTools.webpackSkill')}</li>
+                                <li>{t('additionalTools.axiosUsage')}</li>
                             </ul>
                         </Description>
                     </Main>

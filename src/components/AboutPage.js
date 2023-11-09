@@ -5,6 +5,7 @@ import styled, { keyframes, ThemeProvider } from 'styled-components'
 import { DarkTheme, mediaQueries } from './Themes'
 import astronaut from "../assets/Images/spaceman.png";
 import Loading from '../subComponents/Loading';
+import {useTranslation} from "react-i18next";
 //Components
 const SocialIcons = lazy(() => import('../subComponents/SocialIcons'))
 const PowerButton = lazy(() => import('../subComponents/PowerButton'))
@@ -84,6 +85,8 @@ const Main = styled(motion.div)`
 
 `
 const AboutPage = () => {
+  const { t } = useTranslation();
+
     return (
         <ThemeProvider theme={DarkTheme}>
             <Suspense fallback={<Loading/>}>
@@ -109,7 +112,7 @@ const AboutPage = () => {
                     <Main
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}>
-                      Although sticking to familiar methods is easy and comfortable, I believe it limits growth. I am 'Lee Seunghwan', who consciously strives to step out of my comfort zone by trying new things.
+                      {t('about')}
                     </Main>
                 </Box>
             </Suspense>

@@ -1,0 +1,58 @@
+{
+  "welcome":"Aspiring Front-End Developer proficient in web technologies with an emphasis on crafting user-centric experiences.",
+  "about": "Although sticking to familiar methods is easy and comfortable, I believe it limits growth. I am 'Lee Seunghwan', who consciously strives to step out of my comfort zone by trying new things.",
+  "htmlCss": {
+    "compliant": "Compliant with semantic markup standards.",
+    "seoExperienced": "Experienced with Search Engine Optimization (SEO).",
+    "styledComponentsProficient": "Proficient in using styled-components for CSS-in-JS styling solutions."
+  },
+  "javaScript": {
+    "syntaxKnowledge": "Familiar with JavaScript syntax post ES2015.",
+    "domApiSkill": "Skilled in handling DOM API without jQuery."
+  },
+  "typeScript": {
+    "integrationProficiency": "Proficient in integrating and using TypeScript with various frameworks and libraries."
+  },
+  "react": {
+    "hooksExpertise": "Expert in using React hooks and primarily develops components as functions. Capable of modularizing common business logic appropriately using hooks.",
+    "functionComponents": "Primarily constructs components as functions and sensibly decomposes components.",
+    "stateManagement": "Manages state using Context Api, Zustand, and Recoil."
+  },
+  "additionalTools": {
+    "stateManagementTools": "Proficient in Recoil and Zustand for advanced state management.",
+    "reactQueryExperience": "Experienced with React-Query for asynchronous data fetching and caching.",
+    "webpackSkill": "Skilled in bundling and optimization using Webpack5.",
+    "styledComponentsExpertise": "Expert in styled-components for CSS-in-JS styling solutions.",
+    "axiosUsage": "Adept at making HTTP requests and handling responses using Axios."
+  },
+  "projects": {
+    "first": {
+      "name": "Co-Kirikiri",
+      "description": "A roadmap-based social gathering platform."
+    },
+    "second": {
+      "name": "Sellon",
+      "description": "An auction platform designed for trading unused items."
+    },
+    "third": {
+      "name": "KMU Mutsa Algo",
+      "description": "A Single Page Application (SPA) developed to evaluate the proficiency of 'Like a Lion' candidates, predominantly using React and Firebase."
+    },
+    "fourth": {
+      "name": "House' The Weather?",
+      "description": "A simplistic weather app built using the OpenWeather API and Firebase."
+    },
+    "fifth": {
+      "name": "TodoList",
+      "description": "A TodoList application leveraging the Redux Toolkit and Framer-Motion."
+    },
+    "sixth": {
+      "name": "Vanilla JS Projects",
+      "description": "A collection of mini-projects built purely with HTML, CSS, and JavaScript. Developed without jQuery, focusing on the DOM API."
+    },
+    "seventh": {
+      "name": "KakaoTalk Full Stack Clone",
+      "description": "A full-stack clone of KakaoTalk's UI, friend functionality through Express, real-time user chatting using Socket communication."
+    }
+  }
+}

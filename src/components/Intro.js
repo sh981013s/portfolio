@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Me from '../assets/Images/profile-img5.png';
 import { mediaQueries } from "./Themes";
+import {useTranslation} from "react-i18next";
 
 const Box = styled(motion.div)`
   /* width: 50vw;
@@ -184,7 +185,7 @@ const Text = styled(motion.div)`
 `;
 
 const Intro = () => {
-    /* console.log(mq); */
+    const { t } = useTranslation();
 
     const [height, setHeight] = useState("55vh");
 
@@ -204,7 +205,7 @@ const Intro = () => {
         >
             <SubBox>
                 <Text>
-                  <h2>Aspiring Front-End Developer proficient in web technologies with an emphasis on crafting user-centric experiences.</h2>
+                  <h2>{t('welcome')}</h2>
                 </Text>
             </SubBox>
             <SubBox>

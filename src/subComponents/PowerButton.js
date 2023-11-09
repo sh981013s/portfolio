@@ -44,7 +44,7 @@ const Power = styled.button`
 const PowerButton = () => {
     return (
         <Power>
-            <NavLink to='/'>
+            <NavLink to='/main'>
                 <PowerBtn width={30} height={30} fill='currentColor' />
             </NavLink>
         </Power>

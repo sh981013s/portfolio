@@ -20,7 +20,7 @@ const LogoComponent = (props) => {
     return (
             // <Link to='/'>
                 <Logo color={props.theme}>
-                    <Link to='/' className='title'>
+                    <Link to='/main' className='title'>
                         SeungHwan
                     </Link>
                 </Logo>
